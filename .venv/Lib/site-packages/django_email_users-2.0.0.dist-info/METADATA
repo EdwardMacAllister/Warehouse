@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: django-email-users
+Version: 2.0.0
+Summary: Stock user app but without usernames
+Project-URL: Homepage, https://github.com/bennylope/django-email-users
+Author-email: Ben Lopatin <ben@benlopatin.com>
+License: BSD License
+License-File: AUTHORS.rst
+License-File: LICENSE
+Keywords: django-email-users
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Provides-Extra: linting
+Requires-Dist: flake8; extra == 'linting'
+Requires-Dist: isort; extra == 'linting'
+Provides-Extra: tests
+Requires-Dist: coverage; extra == 'tests'
+Requires-Dist: pytest-cov>=2.4.0; extra == 'tests'
+Requires-Dist: pytest-django>=3.0.0; extra == 'tests'
+Requires-Dist: pytest>=6.0; extra == 'tests'
+Description-Content-Type: text/x-rst
+
+==================
+Django email users
+==================
+
+For when you want regular Django users but email as usernames.
+
+This is a stock replacement for Django's `auth.User` model that removes the
+`username` field in favor of a unique `email` field.
+Both the `User` model and the forms enforce lower
+cased email addresses to ensure uniqueness without
+surprises.
+
+Inspired by the `users` module in pydanny's original `Django cookiecutter
+project template <https://github.com/pydanny/cookiecutter-django/>`_ which I
+kept using and then editing to support email addresses.
+
+Installing
+----------
+
+Install and download with pip::
+
+    pip install django-email-users
+
+Add to your installed apps in your settings.py file::
+
+    INSTALLED_APPS = [
+        ...
+        'users',
+    ]
+
+Change your project's configured user in your settings.py file::
+
+    AUTH_USER_MODEL = 'users.User'
+
+Profit.

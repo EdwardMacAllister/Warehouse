@@ -1,0 +1,13 @@
+aiogram~=3.13.1
+SQLAlchemy~=2.0.36
+bcrypt~=3.2.0
+python-dotenv~=1.0.1
+
+logging~=0.4.9.6
+alembic~=1.13.3
+Flask~=2.3.3
+passlib~=1.7.4
+users~=1.0.dev0
+django-email-users~=2.0.0
+base~=0.0.0
+utils~=1.0.2
